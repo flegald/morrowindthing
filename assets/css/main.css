@@ -1,0 +1,116 @@
+body {
+  background-image: url("../imgs/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Fondamento', cursive;
+}
+
+#content {
+  width:60%;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10%;
+  padding: 30px;
+  background-image: url("../imgs/papyrus.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.character {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height:60%;
+}
+
+.char-icon {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dialouge {
+  background-color: #ffdd99;
+  border-radius: 5%;
+  opacity: 0.8;
+  padding: 5px;
+}
+
+.dialouge > p {
+  opacity: 1.0;
+}
+
+.button {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 2px;
+  border-radius: 5%;
+  margin-top: 20px;
+  text-align: center;
+  width: 30%;
+  cursor: pointer;
+  background-color: #cc8800;
+}
+
+.button:hover {
+  background-color: #996600;
+}
+
+.button:active {
+  background-color: #fff2cc;
+}
+
+.question {
+  background-color: #ffdd99;
+  border-radius: 5%;
+  opacity: 0.8;
+  padding: 5px;
+}
+
+.answers > p {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 2px;
+  border-radius: 5%;
+  margin-top: 20px;
+  text-align: center;
+  width: 80%;
+  cursor: pointer;
+  background-color: #cc8800;
+}
+
+.answers > p:hover {
+  background-color: #996600;
+}
+
+.answers > p:active {
+  background-color: #fff2cc;
+}
+
+.showStats {
+  background-color: #ffdd99;
+  border-radius: 5%;
+  opacity: 0.8;
+  padding: 5px;
+}
+
+.redoButt {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 2px;
+  border-radius: 5%;
+  margin-top: 20px;
+  text-align: center;
+  width: 30%;
+  cursor: pointer;
+  background-color: #cc8800;
+}
+
+.redoButt:hover {
+  background-color: #996600;
+}
+
+.redoButt:active {
+  background-color: #fff2cc;
+}
