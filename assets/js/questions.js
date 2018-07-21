@@ -82,6 +82,48 @@ $(document).ready(function(){
     }
   };
 
+  var classes = [
+    ["Warrior",     [7, 0, 0]], 
+    ["Mage",        [0, 7, 0]],
+    ["Thief",       [0, 0, 7]],
+    ["Knight",      [6, 4, 0]],
+    ["Barbarian",   [6, 3, 1]],
+    ["Knight",      [6, 2, 2]],
+    ["Crusader",    [6, 1, 3]],
+    ["Knight",      [6, 0, 4]],
+    ["Archer",      [5, 5, 0]],
+    ["Archer",      [5, 4, 1]],
+    ["Archer",      [5, 3, 2]],
+    ["Scout",       [5, 2, 3]],
+    ["Archer",      [5, 1, 4]],
+    ["Archer",      [5, 0, 5]],
+    ["Healer",      [4, 6, 0]],
+    ["Rogue",       [4, 0, 6]],
+    ["Rogue",       [4, 1, 5]],
+    ["Rogue",       [4, 2, 4]],
+    ["Rogue",       [4, 3, 3]],
+    ["Rogue",       [4, 4, 2]],
+    ["Rogue",       [4, 5, 1]],
+    ["Healer",      [3, 6, 1]],
+    ["Witchhunter", [3, 5, 2]],
+    ["Spellsword",  [3, 4, 3]],
+    ["Warrior",     [3, 3, 4]],
+    ["Pilgrim",     [3, 2, 5]],
+    ["Agent",       [3, 1, 6]],
+    ["Sorcerer",    [2, 6, 2]],
+    ["Witchhunter", [2, 5, 3]],
+    ["Spellsword",  [2, 4, 4]],
+    ["Monk",        [2, 3, 5]],
+    ["Acrobat",     [2, 2, 6]],
+    ["Battlemage",  [1, 6, 3]],
+    ["Witchhunter", [1, 5, 4]],
+    ["Spellsword",  [1, 4, 5]],
+    ["Assassin",    [1, 3, 6]],
+    ["Battlemage",  [0, 6, 4]],
+    ["Witchhunter", [0, 5, 5]],
+    ["Spellsword",  [0, 4, 6]]
+]
+
 // DOM INIT ####################################################################
 function domInit() {
   initStorage();
@@ -131,9 +173,33 @@ function domInit() {
 
 // Flow ########################################################################
 
+function findClass(){
+  var stats = getStats();
+  var classArray = [
+    parseInt(stats.stats["combat"]),
+    parseInt(stats.stats["magic"]),
+    parseInt(stats.stats["stealth"]),
+  ];
+  if (parseInt(stats.stats["combat"]) > 6) {
+    return "Warrior"
+  } else if (parseInt(stats.stats["magic"]) > 6) {
+    return "Mage"
+  } else if (parseInt(stats.stats["stealth"]) > 6) {
+    return "Thief"
+  } else {
+    for (var i = 0; i < classes.length; i++){
+      if (JSON.stringify(classArray) == JSON.stringify(classes[i][1])){
+        return classes[i][0]
+      }
+    }
+  }
+}
+
 function showStats(){
   $(".question-container").hide();
   var results = getStats();
+  var className = findClass();
+  $(".classResults").text("Class: " + className)
   $(".combatResults").text("Combat: " + results["stats"]["combat"])
   $(".magicResults").text("Magic: " + results["stats"]["magic"])
   $(".stealthResults").text("Stealth: " + results["stats"]["stealth"])
@@ -161,7 +227,6 @@ function begin(){
   $(".dialouge").hide();
   updateQuestion()
   $(".question-container").fadeIn();
-
 }
 
 // LISTENERS ###################################################################
