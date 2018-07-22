@@ -4,6 +4,7 @@
   <title>
     Morrowind
   </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link type="text/css" rel="stylesheet" href="assets/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Fondamento" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,54 +13,54 @@
 <body>
 <audio src="assets/sounds/Theme.mp3" autoplay>
 </audio>
+<div id="page">
+  <div id="content">
 
-<div id="content">
-
-  <div class="character">
-    <img class="char-icon" src="assets/imgs/ergalla.png"/>
-  </div>
-
-  <div class="dialouge">
-    <p id="main-text">"Ahh yes, we've been expecting you. You'll have to be recorded before you're officially released"</p>
-  </div>
-
-  <div class="question-container">
-
-    <div class="question">
-      <p></p>
+    <div class="character">
+      <img class="char-icon" src="assets/imgs/ergalla.png"/>
     </div>
 
-    <div class="answers">
-      <p class="combat"></p>
-      <p class="magic"></p>
-      <p class="stealth"></p>
+    <div class="dialouge">
+      <p id="main-text">"Ahh yes, we've been expecting you. You'll have to be recorded before you're officially released"</p>
+    </div>
+
+    <div class="question-container">
+
+      <div class="question">
+        <p></p>
+      </div>
+
+      <div class="answers">
+        <p class="combat"></p>
+        <p class="magic"></p>
+        <p class="stealth"></p>
+      </div>
+
+    </div>
+
+    <div class="showStats">
+
+      <div class="endText">
+        <p class="classResults">Class:</p>
+        <ul class="resultsUl">
+          <li class="combatResults"></li>
+          <li class="magicResults"></li>
+          <li class="stealthResults"></li>
+        </ul>
+      </div>
+
+      <div class="redoButt">
+        <p id="redoButt-text">Replay</p>
+      </div>
+    </div>
+
+
+    <div class="button">
+      <p id="butt-text">Continue</p>
     </div>
 
   </div>
-
-  <div class="showStats">
-
-    <div class="endText">
-      <p class="classResults">Class:</p>
-      <ul class="resultsUl">
-        <li class="combatResults"></li>
-        <li class="magicResults"></li>
-        <li class="stealthResults"></li>
-      </ul>
-    </div>
-
-    <div class="redoButt">
-      <p id="redoButt-text">Replay</p>
-    </div>
-  </div>
-
-
-  <div class="button">
-    <p id="butt-text">Continue</p>
-  </div>
-
 </div>
-
 
 <script type="text/javascript" src="assets/js/questions.js"></script>
 </body>
